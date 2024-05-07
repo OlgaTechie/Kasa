@@ -1,5 +1,4 @@
 import React from 'react';
-import './'
 import Home from './pages/Home/Home';
 
 
