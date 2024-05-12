@@ -8,7 +8,7 @@ function Home() {
     return (
         <div className='home-container'>
             <Header />
-            <Banner imageUrl={require('../../assets/Image source 1.png')} title={"Chez vous, partout et ailleurs"} />
+            <Banner imageUrl={('/banner_1.png')} title={"Chez vous, partout et ailleurs"} />
             <Gallery />
             <Footer />
         </div>
