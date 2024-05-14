@@ -1,0 +1,37 @@
+.dropdown-menu {
+    width: 80%;
+    margin: 40px auto;
+    border-radius: 5px;
+
+    .dropdown-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px 10px 15px;
+        cursor: pointer;
+        background-color: #FF6060;
+        border-radius: 5px;
+
+        span {
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: 700;
+            padding: 10px;
+        }
+    }
+
+    .dropdown-content {
+        padding: 20px 30px;
+        color: black; 
+        background-color: #FFFFFF;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 34.22px;
+        display: none;
+    }
+
+    &.open {
+        .dropdown-content {
+            display: block;
+        }
+    }
+}

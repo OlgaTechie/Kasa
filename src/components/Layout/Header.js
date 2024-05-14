@@ -1,9 +1,11 @@
 import React from 'react';
 import './Header.scss'
 import logo from '../../assets/logo_kasa.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
+    const location = useLocation();
+
     return (
         <header className='header'>
             <div className='header-container'>
@@ -13,10 +15,10 @@ function Header() {
                 <nav className='navigation'>
                     <ul>
                         <li>
-                            <Link to='/'>Accueil</Link>
+                            <Link to='/' className={location.pathname === '/' ? 'active-link' : ''}>Accueil</Link>
                         </li>
                         <li>
-                            <Link to="/about">A Propos</Link>
+                            <Link to="/about" className={location.pathname === '/about' ? 'active-link' : ''}>A Propos</Link>
                         </li>
                     </ul>
                 </nav>

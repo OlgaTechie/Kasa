@@ -1,0 +1,16 @@
+.dropdowns-container {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    
+    .description, .amenities {
+        flex: 1;
+    }
+
+    .amenities-list {
+        
+        .amenity-item {
+            line-height: 26px;
+        }
+    }
+}
