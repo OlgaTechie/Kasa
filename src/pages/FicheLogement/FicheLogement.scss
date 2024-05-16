@@ -1,5 +1,6 @@
 .house-details {
     position: relative;
+    width: 100%;
 
     img {
         max-width: 100%;
@@ -11,7 +12,7 @@
 
     .image-navigation {
         position: absolute;
-        top: 30%;
+        top: 25%;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -72,6 +73,7 @@
             color: #FF6060;
             font-size: 18px;
             font-weight: 500;
+            text-align: right;
         }
 
         .host-image {

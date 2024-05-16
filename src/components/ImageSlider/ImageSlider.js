@@ -1,31 +1,24 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import "./ImageSlider.scss";
 
-function ImageSlider({ pictures, currentImageIndex, handlePrevImage, handleNextImage, setCurrentImageIndex }) {
-    
-    // Configuration du carrousel
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        beforeChange: (current, next) => setCurrentImageIndex(next),
+function ImageSlider({ data }) {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const { pictures } = data; 
+
+    const handlePrevImage = () => {
+        setCurrentImageIndex(prevIndex => prevIndex === 0 ? pictures.length - 1 : prevIndex - 1);
+    };
+
+    const handleNextImage = () => {
+        setCurrentImageIndex(prevIndex => prevIndex === pictures.length - 1 ? 0 : prevIndex + 1);
     };
 
     return (
-        <div>
-            <Slider {...settings} initialSlide={currentImageIndex}>
-                {pictures.map((picture, index) => (
-                        <div key={index}>
-                            <img src={picture} alt={`House ${index}`} />
-                        </div>
-                    ))}
-                </Slider>
+        <div className="image-slider">
+            <div className="image-container">
+                <img src={pictures[currentImageIndex]} alt={`House ${currentImageIndex}`} />
                 <div className="image-navigation">
                     <div className="icon-container left" onClick={handlePrevImage}>
                         <FontAwesomeIcon icon={faChevronLeft} />
@@ -33,7 +26,9 @@ function ImageSlider({ pictures, currentImageIndex, handlePrevImage, handleNextI
                     <div className="icon-container right" onClick={handleNextImage}>
                         <FontAwesomeIcon icon={faChevronRight} />
                     </div>
-                </div>
+            </div>
+            </div>
+                   
         </div>
     )
 }

@@ -1,10 +1,17 @@
-.dropdowns-container {
+.dropdowns-container_logement {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 50px;
+    margin: 40px 0;
+    padding-bottom: 20px;
+    max-width: 100%;
+    width: 100%;
+    
     
     .description, .amenities {
         flex: 1;
+        width: 100%;
     }
 
     .amenities-list {

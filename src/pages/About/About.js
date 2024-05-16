@@ -3,13 +3,14 @@ import Header from "../../components/Layout/Header";
 import Banner from "../../components/Banner";
 import DropDownMenu from "../../components/DropDownMenu/DropDownMenu";
 import Footer from "../../components/Layout/Footer";
+import "./About.scss";
 
 function About() {
     return (
         <div className="about-container">
             <Header />
             <Banner imageUrl={('/banner_2.png')} className="about-banner" opacity={0.3} />
-            <div className="dropdowns-container">
+            <div className="dropdowns-container_about">
                 <DropDownMenu title="Fiabilité" content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes." />
                 <DropDownMenu title="Respect" content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme." />
                 <DropDownMenu title="Service" content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme." />
