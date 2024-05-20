@@ -2,98 +2,29 @@
     position: relative;
     width: 100%;
 
-    img {
-        max-width: 100%;
-        height: 415px;
-        border-radius: 25px;
-        object-fit: cover;
-        width: 100%;
-    }
+    .house-and-host-information {
+        display: grid;
+        grid-template-areas: 
+            "introduction host"
+            "tags rate";
+        grid-template-columns: 1fr auto;
 
-    .image-navigation {
-        position: absolute;
-        top: 25%;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-
-        .icon-container {
-            font-size: 80px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            color: white;
-            
-
-            &.left {
-                margin-left: 20px;
-                
-            }
-
-            &.right {
-                margin-right: 20px;
-            }
-        }
-    }
-
-    .house-introduction {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        .house-title {
-            display: flex;
-            flex-direction: column;
-    
-            h2 {
-                color: #FF6060;
-                font-size: 36px;
-                font-weight: 500;
-                line-height: 51px;
-                margin-bottom: 5px;
-            }
-        
-            .house-location {
-                font-size: 18px;
-                font-weight: 500;
-                line-height: 26px;
-                margin-top: 5px;
-            }
-        }
-    }
-    
-    .host-info {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        .host-name {
-            margin-right: 10px;
-            color: #FF6060;
-            font-size: 18px;
-            font-weight: 500;
-            text-align: right;
+        .house-intro {
+            grid-area: introduction;
         }
 
-        .host-image {
-            width: 64px;
-            height: 64px;
-            border-radius: 50px;
-            margin-left: 10px;
-            background-color: #C4C4C4;
+        .host {
+            grid-area: host;
+            justify-self: end;
+            padding-top: 30px;
         }
-    }
-
-    .tags-rate {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
 
         .tags {
+            grid-area: tags;
             display: flex;
+            flex-direction: row;
             gap: 20px;
-
+            
             .tag {
                 color: #FFFFFF;
                 background-color: #FF6060;
@@ -108,10 +39,14 @@
         }
 
         .rate {
+            grid-area: rate;
             display: flex;
+            flex-direction: row;
             align-items: center;
+            margin-left: auto;
             gap: 5px;
             font-size: 30px;
+            justify-self: end;
 
             .active-star {
                 color: #FF6060;
@@ -120,6 +55,53 @@
 
             .inactive-star {
                 color: #E3E3E3;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .house-details {
+        .house-and-host-information {
+            display: grid;
+            grid-template-areas: 
+                "introduction introduction"
+                "tags tags"
+                "rate host";
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto auto 80px;
+
+            .house-intro {
+                grid-area: introduction;
+            }
+
+            .tags {
+                grid-area: tags;
+                gap: 10px;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .rate {
+                grid-area: rate;
+                font-size: 18px;
+                justify-self: start;
+                padding-top: 18px;
+            }    
+            
+            .host {
+                grid-area: host;
+                justify-self: end;
+            }
+
+            &.responsive {
+                flex-direction: row;
+
+                .rate-host-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }                
             }
         }
     }

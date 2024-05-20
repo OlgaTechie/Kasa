@@ -1,0 +1,21 @@
+.host-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .host-name {
+        margin-right: 10px;
+        color: #FF6060;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: right;
+    }
+
+    .host-image {
+        width: 64px;
+        height: 64px;
+        border-radius: 50px;
+        margin-left: 10px;
+        background-color: #C4C4C4;
+    }
+}

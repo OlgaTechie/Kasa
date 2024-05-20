@@ -19,6 +19,44 @@
         p {
             font-size: 24px;
             font-weight: 500;
+
+            .desktop {
+                display: block; /* Afficher seulement sur desktop */
+            }
+    
+            .mobile {
+                display: none; /* Cacher par défaut sur desktop */
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        margin: -20px;
+
+        .footer-container {
+            display: flex;
+            align-items: center;
+            padding-bottom: 30px;
+
+            img {
+                width: 40%;
+                padding: 20px 0 0 90px;
+            }
+
+            p {
+                font-size: 12px;
+                text-align: center;
+                
+                .desktop {
+                    display: none;
+                }
+    
+                .mobile {
+                    display: block;
+                }
+            }
         }
     }
 }

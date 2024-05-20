@@ -9,6 +9,7 @@
         cursor: pointer;
         background-color: #FF6060;
         border-radius: 5px;
+        max-height: 200px;
 
         span {
             color: #FFFFFF;
@@ -23,14 +24,34 @@
         color: black; 
         font-size: 18px;
         font-weight: 400;
-        line-height: 34.22px;
+        line-height: 26px;
         display: none;
         background-color:#F6F6F673;
+        max-height: 0;
+        transition: max-height 0.4s ease;
+        overflow: hidden;
     }
 
     &.open {
         .dropdown-content {
             display: block;
+            max-height: 200px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown-menu {
+        .dropdown-header {
+            span {
+                font-size: 15px;
+            }
+        }
+
+        .dropdown-content {
+            font-size: 12px;
+            line-height: 17px;
+            padding: 10px;
         }
     }
 }

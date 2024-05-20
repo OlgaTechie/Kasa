@@ -39,3 +39,35 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    .header {
+
+        .header-container {
+            
+            img {
+                width: 70%;
+            }
+
+            .navigation {
+                ul {
+                    display: flex;
+                    align-items: center;
+                    gap: 26px;
+                    padding: 0;
+
+                    li {
+                        font-size: 12px;
+                        font-weight: 500;
+                        margin: 0;
+                        
+
+                        a {
+                            text-transform: uppercase;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

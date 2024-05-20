@@ -17,7 +17,18 @@
     .amenities-list {
         
         .amenity-item {
-            line-height: 26px;
+            line-height: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dropdowns-container_logement {
+        flex-direction: column;
+        gap: 20px;
+
+        .amenity-item {
+            line-height: 17px;
         }
     }
 }

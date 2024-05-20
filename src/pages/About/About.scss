@@ -6,3 +6,10 @@
     margin: 40px;
     padding: 0 40px;
 }
+
+@media screen and (max-width: 768px) {
+    .dropdowns-container_about {
+        margin: 40px 0;
+        padding: 0;
+    }
+}
