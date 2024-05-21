@@ -10,11 +10,16 @@
         margin: 0;
     }
 
-    p {
-        color: #FF6060;
-        font-size: 36px;
-        font-weight: 500;
-        margin: 40px 0;
+    .notfound-message {
+        text-align: center;
+
+        p {
+            color: #FF6060;
+            font-size: 36px;
+            font-weight: 500;
+            margin: 40px 0;
+            white-space: nowrap;
+        }
     }
 
     a {
@@ -24,5 +29,29 @@
         padding: 40px;
         margin: 40px;
         text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .notfound-content {
+        h1 {
+            font-size: 99px;
+            margin: 40px 0;
+            padding-bottom: 20px;
+        }
+
+        .notfound-message {
+            p {
+                font-size: 18px;
+                white-space: normal;
+            }
+        }
+
+        
+
+        a {
+            font-size: 14px;
+            text-align: center;
+        }
     }
 }
