@@ -12,12 +12,11 @@ import Tags from "../../components/TagsAndRate/Tags";
 import Rate from "../../components/TagsAndRate/Rate";
 
 function FicheLogement() {
-    const { id } = useParams(); // Récupérer l'ID de la maison à partir de l'URL
+    const { id } = useParams();
     const house = data.find(item => item.id === id);
 
-    // Vérifier si house est défini et si la propriété tags existe
     if (!house || !house.tags) {
-    return <Navigate to="/not-found" />
+        return <Navigate to="/not-found" />
     }
 
     const isMobile = window.innerWidth <= 768;
@@ -34,12 +33,12 @@ function FicheLogement() {
                     <div className={`host ${isMobile ? 'rate-host-container' : ''}`}>
                         <HostInformation house={house} />
                     </div>
-                        <div className="tags">
-                            <Tags tags={house.tags} />
-                        </div>
-                        <div className="rate">
-                            <Rate rating={house.rating} />
-                        </div>
+                    <div className="tags">
+                        <Tags tags={house.tags} />
+                    </div>
+                    <div className="rate">
+                        <Rate rating={house.rating} />
+                    </div>
                 </div>
                 <DescriptionAndAmenities description={house.description} amenities={house.equipments} />
             </div>
